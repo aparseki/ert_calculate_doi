@@ -62,7 +62,7 @@ system('R2.exe')
 %% plot and save result with DOI isocontour
 
 % plotting
-ert_tri('f001_res.dat',setClim,[setXlim setYlim],R); hold on
+ert_tri('f001_res.dat',setClim,[setXlim setYlim],setSenLim); hold on
 xlim(setXlim); ylim(setYlim)
 set(gca,'Layer','top')
 
@@ -71,12 +71,12 @@ XX=min(m1(:,1)):1:max(m1(:,1));
 YY=min(m1(:,2)):1:max(m1(:,2));
 D = griddata(m1(:,1),m2(:,2),R,XX,YY');
 cval = contour(XX,YY,D,[.4 2],'-k','linewidth',.25);
-cval = contour(XX,YY,D,[.6 2],'--k','linewidth',.25);
-%cval = contour(XX,YY,D,[.8 2],':k','linewidth',.25);
+%cval = contour(XX,YY,D,[.6 2],'--k','linewidth',.25);
+cval = contour(XX,YY,D,[.2 2],'--k','linewidth',.25);
+ylabel(['elevation [meter]'])
 % save image
 set(findall(gcf,'-property','FontSize'),'FontSize',11 ) 
 set(findall(gcf,'-property','FontName'),'FontName','Lucinda Sans' ) 
-set(gcf,'PaperUnits','centimeters','PaperPosition',[0 0 12 6]) 
+set(gcf,'PaperUnits','centimeters','PaperPosition',[0 0 16 6]) 
 outname = nameOut;
 print(outname,'-djpeg','-r600')
-close all
