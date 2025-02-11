@@ -3,18 +3,18 @@ clear; close all
 
 % user defined INVERSION parameters
 startRes = 140; % geometric mean of apparent resistivities 
-numel    = 12014; % number of elements, first val from mesh file
+numel    = 6583; % number of elements, first val from mesh file
 reg_mode = 1;    % regularixation mode, need to use 1 for O&L doi calc
 alpha_s  = 1;    % regularization parameter, use >1 for O&L
 a_wgt    = 0.02; % calcualted from measured data errors
 b_wgt    = 0.04; % calculate from measured data errors
-elecNum  = 112;   % number of electrodes in the survey
+elecNum  = 58;   % number of electrodes in the survey
 elecSep  = 1;    % electrode separation in meters
 
 % user defined PLOTTING parameters
-nameOut     = 'ngb_doitest.jpg';         % desired name for image output
+nameOut     = 'bb_doitest.jpg';         % desired name for image output
 setYlim     = [-15 4];              %set the Y limit of the plot, must start with min
-setXlim     = [0 112];                %set the X limit of the plot, must start with min
+setXlim     = [0 58];                %set the X limit of the plot, must start with min
 setClim     = [1.5 3.5];                 %set the log10 resistivty range
 setSenLim   = -5;                    %set the sensitivty mask
 
